@@ -11,16 +11,13 @@ print("NOTE! Time:\t 1x1000")
 print("=====================================\n")
 
 def bn(l, e):
-    t = len(l)
-    b = 0
-    while t > b:
-        m = (t + b) // 2
-        if e == l[m]:
-            return [e, m]
-        elif e < l[m]:
-            t = m
-        elif e > l[m]:
-            b = m
+    high = len(l)
+    low = 0
+    while high > low:
+        i = (high + low) // 2
+        if e == l[i]: return [e, i]
+        elif e < l[i]: high = i
+        else: low = i
     return -1
 
 def it(l, e):
